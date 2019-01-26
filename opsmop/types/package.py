@@ -53,6 +53,9 @@ class Package(Type):
         elif method == 'apt':
             from opsmop.providers.package.apt import Apt
             return Apt
+        elif method == 'npm':
+            from opsmop.providers.package.npm import Npm
+            return Npm
         raise NoSuchProviderError(self, method)
 
     def default_provider(self):
